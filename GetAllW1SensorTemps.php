@@ -13,7 +13,7 @@ foreach ($w1Sensors as $key)
 	$sensorTemp = file_get_contents($path);
 	$sensorTemp = substr($sensorTemp, strpos($sensorTemp, "t=") + 2);    
 	$temperatures[$key]["Temp"] = $sensorTemp/ 1000;
-	$temperatures[$key]["Time"] = date("F j, Y, g:i a"); 
+	$temperatures[$key]["Time"] = time();
 }
 return $temperatures;
 }
