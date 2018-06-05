@@ -25,8 +25,9 @@ while (1) {
 	echo "------------------------------------------\n";
 
 	$temperatures = GetAllW1SensorTemps();
+	var_dump($temperatures);
 	foreach ($temperatures as $key => $value) {
-		echo "$key : $value °C \n";
+		echo "$key : ". $value["Temp"] ." °C on " . $value["Time"] . "\n";
 	}
 
  	echo "\n------------------------------------------\n";

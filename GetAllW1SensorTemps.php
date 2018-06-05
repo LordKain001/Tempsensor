@@ -12,7 +12,8 @@ foreach ($w1Sensors as $key)
 	$path = "/sys/bus/w1/devices/" . $key . "/w1_slave";
 	$sensorTemp = file_get_contents($path);
 	$sensorTemp = substr($sensorTemp, strpos($sensorTemp, "t=") + 2);    
-	$temperatures[$key] = $sensorTemp/ 1000;
+	$temperatures[$key]["Temp"] = $sensorTemp/ 1000;
+	$temperatures[$key]["Time"] = date("F j, Y, g:i a"); 
 }
 return $temperatures;
 }
